@@ -13,7 +13,6 @@ vector<int> nextGreaterElement(
 
     stack<int> st;
 
-    // Find next greater for every element in nums2
     for (int x : nums2) {
 
         while (!st.empty() &&
@@ -26,15 +25,12 @@ vector<int> nextGreaterElement(
         st.push(x);
     }
 
-    // Elements remaining in stack
-    // don't have a greater element
     while (!st.empty()) {
 
         nextGreater[st.top()] = -1;
         st.pop();
     }
 
-    // Build answer for nums1
     vector<int> result;
 
     for (int x : nums1) {
