@@ -14,14 +14,12 @@ int calculate(string s) {
 
         char ch = s[i];
 
-        // Build number
         if (isdigit(ch)) {
 
             number = number * 10
                    + (ch - '0');
         }
 
-        // Operator or last character
         if ((!isdigit(ch) && ch != ' ')
             || i == s.length() - 1) {
 
