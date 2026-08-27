@@ -61,7 +61,6 @@ int maximalRectangle(
 
     for (int i = 0; i < rows; i++) {
 
-        // Build histogram
         for (int j = 0; j < cols; j++) {
 
             if (matrix[i][j] == '1') {
@@ -72,7 +71,6 @@ int maximalRectangle(
             }
         }
 
-        // Largest rectangle for current row
         maxArea = max(
             maxArea,
             largestRectangleArea(heights)
