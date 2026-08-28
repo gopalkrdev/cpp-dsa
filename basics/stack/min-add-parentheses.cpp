@@ -19,13 +19,12 @@ int minAddToMakeValid(string s) {
                 open--;
             }
             else {
-                // Need one '(' before this ')'
+
                 answer++;
             }
         }
     }
 
-    // Remaining '(' need closing ')'
     answer += open;
 
     return answer;
