@@ -8,7 +8,6 @@ string removeKdigits(string num, int k) {
 
     for (char digit : num) {
 
-        // Remove bigger previous digits
         while (!st.empty() &&
                k > 0 &&
                st.back() > digit) {
@@ -20,14 +19,11 @@ string removeKdigits(string num, int k) {
         st.push_back(digit);
     }
 
-    // If removals are still remaining,
-    // remove digits from the end
     while (k > 0 && !st.empty()) {
         st.pop_back();
         k--;
     }
 
-    // Remove leading zeros
     int start = 0;
 
     while (start < st.length() &&
@@ -37,7 +33,6 @@ string removeKdigits(string num, int k) {
 
     string result = st.substr(start);
 
-    // If everything is removed
     if (result.empty()) {
         return "0";
     }
