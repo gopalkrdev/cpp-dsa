@@ -9,7 +9,6 @@ bool isValid(string s) {
 
     for (char ch : s) {
 
-        // Opening brackets
         if (ch == '(' ||
             ch == '[' ||
             ch == '{') {
@@ -17,7 +16,6 @@ bool isValid(string s) {
             st.push(ch);
         }
 
-        // Closing bracket ')'
         else if (ch == ')') {
 
             if (st.empty() ||
@@ -28,7 +26,6 @@ bool isValid(string s) {
             st.pop();
         }
 
-        // Closing bracket ']'
         else if (ch == ']') {
 
             if (st.empty() ||
@@ -39,7 +36,6 @@ bool isValid(string s) {
             st.pop();
         }
 
-        // Closing bracket '}'
         else if (ch == '}') {
 
             if (st.empty() ||
