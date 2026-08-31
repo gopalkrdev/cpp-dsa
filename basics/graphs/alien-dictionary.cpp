@@ -11,7 +11,6 @@ string alienOrder(vector<string>& words) {
     vector<int> indegree(26, 0);
     vector<bool> present(26, false);
 
-    // Mark characters that exist
     for (string word : words) {
 
         for (char ch : word) {
@@ -19,7 +18,6 @@ string alienOrder(vector<string>& words) {
         }
     }
 
-    // Build graph
     for (int i = 0; i < words.size() - 1; i++) {
 
         string a = words[i];
@@ -45,7 +43,6 @@ string alienOrder(vector<string>& words) {
         }
 
         // Invalid case:
-        // "abc" comes before "ab"
         if (!found && a.size() > b.size()) {
             return "";
         }
