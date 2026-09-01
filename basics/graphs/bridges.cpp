@@ -18,19 +18,16 @@ void dfs(
 
     for (int neighbour : graph[node]) {
 
-        // Parent edge
         if (neighbour == parent) {
             continue;
         }
 
-        // Back edge
         if (visited[neighbour]) {
 
             low[node] =
                 min(low[node], tin[neighbour]);
         }
 
-        // Unvisited neighbour
         else {
 
             dfs(
@@ -45,7 +42,6 @@ void dfs(
             low[node] =
                 min(low[node], low[neighbour]);
 
-            // Bridge condition
             if (low[neighbour] > tin[node]) {
 
                 cout << "Bridge: "
