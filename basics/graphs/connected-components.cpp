@@ -26,7 +26,6 @@ int countComponents(vector<vector<int>>& graph) {
 
     for (int i = 0; i < n; i++) {
 
-        // New unvisited component found
         if (!visited[i]) {
 
             components++;
@@ -44,14 +43,12 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // Component 1
     graph[0].push_back(1);
     graph[1].push_back(0);
 
     graph[1].push_back(2);
     graph[2].push_back(1);
 
-    // Component 2
     graph[3].push_back(4);
     graph[4].push_back(3);
 
