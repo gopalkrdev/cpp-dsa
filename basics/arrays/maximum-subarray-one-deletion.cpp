@@ -13,11 +13,9 @@ int maximumSum(int arr[], int n) {
         int previousNoDelete = noDelete;
         int previousOneDelete = oneDelete;
 
-        // Do not delete current element
         noDelete = max(arr[i],
                        previousNoDelete + arr[i]);
 
-        // Delete one element
         oneDelete = max(previousNoDelete,
                         previousOneDelete + arr[i]);
 
