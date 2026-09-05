@@ -17,8 +17,6 @@ int numSubarrayProductLessThanK(int arr[], int n, int k) {
             left++;
         }
 
-        // All subarrays ending at right
-        // from left to right are valid.
         count += right - left + 1;
     }
 
