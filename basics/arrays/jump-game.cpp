@@ -7,15 +7,12 @@ bool canJump(int arr[], int n) {
 
     for (int i = 0; i < n; i++) {
 
-        // Current index reachable nahi hai
         if (i > farthest) {
             return false;
         }
 
-        // Maximum position we can reach
         farthest = max(farthest, i + arr[i]);
-
-        // Last index already reachable
+        
         if (farthest >= n - 1) {
             return true;
         }
