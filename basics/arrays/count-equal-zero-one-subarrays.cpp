@@ -5,7 +5,6 @@ using namespace std;
 int countSubarrays(int arr[], int n) {
     unordered_map<int, int> frequency;
 
-    // Treat 0 as -1
     int prefixSum = 0;
     int count = 0;
 
@@ -19,7 +18,6 @@ int countSubarrays(int arr[], int n) {
             prefixSum++;
         }
 
-        // Same prefix sum means equal 0s and 1s
         if (frequency.find(prefixSum) != frequency.end()) {
             count += frequency[prefixSum];
         }
