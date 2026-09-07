@@ -14,14 +14,12 @@ int canCompleteCircuit(int gas[], int cost[], int n) {
 
         currentGas += gas[i] - cost[i];
 
-        // Current starting point cannot work
         if (currentGas < 0) {
             start = i + 1;
             currentGas = 0;
         }
     }
 
-    // Total gas is less than total cost
     if (totalGas < totalCost) {
         return -1;
     }
