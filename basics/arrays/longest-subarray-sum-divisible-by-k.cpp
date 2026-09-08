@@ -9,7 +9,6 @@ int longestSubarray(int arr[], int n, int k) {
     int prefixSum = 0;
     int maxLength = 0;
 
-    // Remainder 0 exists before the array
     firstIndex[0] = -1;
 
     for (int i = 0; i < n; i++) {
@@ -17,12 +16,10 @@ int longestSubarray(int arr[], int n, int k) {
 
         int remainder = prefixSum % k;
 
-        // Handle negative numbers
         if (remainder < 0) {
             remainder += k;
         }
 
-        // First occurrence gives maximum length
         if (firstIndex.find(remainder) != firstIndex.end()) {
             int length = i - firstIndex[remainder];
             maxLength = max(maxLength, length);
