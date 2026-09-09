@@ -14,8 +14,6 @@ int longestConsecutive(int arr[], int n) {
 
     for (int i = 0; i < n; i++) {
 
-        // Start only if this is the beginning
-        // of a sequence.
         if (numbers.find(arr[i] - 1) == numbers.end()) {
 
             int current = arr[i];
