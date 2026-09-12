@@ -11,12 +11,10 @@ int main() {
 
     unordered_map<int, int> freq;
 
-    // Count frequency
     for (int x : nums) {
         freq[x]++;
     }
 
-    // Print frequency
     cout << "Frequency:\n";
 
     for (auto entry : freq) {
