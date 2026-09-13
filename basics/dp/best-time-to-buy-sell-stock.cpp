@@ -9,12 +9,10 @@ int maxProfit(int prices[], int n) {
 
     for (int i = 1; i < n; i++) {
 
-        // Sell today
         int profit = prices[i] - minPrice;
 
         maxProfit = max(maxProfit, profit);
 
-        // Update minimum buying price
         minPrice = min(minPrice, prices[i]);
     }
 
