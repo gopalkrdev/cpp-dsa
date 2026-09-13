@@ -12,11 +12,9 @@ int maxProfit(int prices[], int n) {
 
     for (int i = 1; i < n; i++) {
 
-        // First transaction
         buy1 = max(buy1, -prices[i]);
         sell1 = max(sell1, buy1 + prices[i]);
 
-        // Second transaction
         buy2 = max(buy2, sell1 - prices[i]);
         sell2 = max(sell2, buy2 + prices[i]);
     }
