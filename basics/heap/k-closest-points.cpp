@@ -16,8 +16,6 @@ vector<vector<int>> kClosest(
     int k
 ) {
 
-    // Max Heap:
-    // {distance, point}
     priority_queue<
         pair<int, vector<int>>
     > maxHeap;
@@ -32,7 +30,6 @@ vector<vector<int>> kClosest(
             point
         });
 
-        // Keep only K closest points
         if (maxHeap.size() > k) {
             maxHeap.pop();
         }
