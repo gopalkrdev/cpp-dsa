@@ -9,7 +9,6 @@ int maxProfit(int k, int prices[], int n) {
         return 0;
     }
 
-    // If k is large, it becomes unlimited transactions
     if (k >= n / 2) {
 
         int profit = 0;
@@ -23,11 +22,6 @@ int maxProfit(int k, int prices[], int n) {
         return profit;
     }
 
-    // dp[t][0] = maximum profit after t transactions
-    //            with no stock in hand
-    //
-    // dp[t][1] = maximum profit after t transactions
-    //            while holding a stock
 
     vector<int> buy(k + 1, -1000000000);
     vector<int> sell(k + 1, 0);
