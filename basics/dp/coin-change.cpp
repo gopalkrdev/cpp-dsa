@@ -5,7 +5,6 @@ using namespace std;
 
 int coinChange(int coins[], int n, int amount) {
 
-    // amount + 1 means impossible value
     vector<int> dp(amount + 1, amount + 1);
 
     dp[0] = 0;
