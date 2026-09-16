@@ -13,12 +13,10 @@ int longestPalindromicSubsequence(string s) {
         vector<int>(n, 0)
     );
 
-    // Single character is a palindrome
     for (int i = 0; i < n; i++) {
         dp[i][i] = 1;
     }
 
-    // Length of substring
     for (int length = 2; length <= n; length++) {
 
         for (int i = 0; i <= n - length; i++) {
