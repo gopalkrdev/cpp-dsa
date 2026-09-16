@@ -5,7 +5,6 @@ using namespace std;
 
 int coinChange(int coins[], int n, int amount) {
 
-    // dp[x] = minimum coins needed to make amount x
     vector<int> dp(amount + 1, amount + 1);
 
     dp[0] = 0;
