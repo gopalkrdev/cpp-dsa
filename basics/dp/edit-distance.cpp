@@ -14,12 +14,10 @@ int editDistance(string s1, string s2) {
         vector<int>(m + 1, 0)
     );
 
-    // Convert empty s1 to s2
     for (int j = 0; j <= m; j++) {
         dp[0][j] = j;
     }
 
-    // Convert s1 to empty s2
     for (int i = 0; i <= n; i++) {
         dp[i][0] = i;
     }
@@ -30,16 +28,14 @@ int editDistance(string s1, string s2) {
 
             if (s1[i - 1] == s2[j - 1]) {
 
-                // Characters already same
                 dp[i][j] = dp[i - 1][j - 1];
             }
             else {
 
-                // Insert, Delete, Replace
                 dp[i][j] = 1 + min({
-                    dp[i][j - 1],     // Insert
-                    dp[i - 1][j],     // Delete
-                    dp[i - 1][j - 1]  // Replace
+                    dp[i][j - 1],     
+                    dp[i - 1][j],     
+                    dp[i - 1][j - 1]  
                 });
             }
         }
