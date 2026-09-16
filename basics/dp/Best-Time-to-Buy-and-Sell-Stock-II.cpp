@@ -7,7 +7,6 @@ int maxProfit(int prices[], int n) {
 
     for (int i = 1; i < n; i++) {
 
-        // Price increased, so take the profit
         if (prices[i] > prices[i - 1]) {
             profit += prices[i] - prices[i - 1];
         }
