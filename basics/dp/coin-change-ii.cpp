@@ -6,8 +6,6 @@ int change(int amount, int coins[], int n) {
 
     vector<int> dp(amount + 1, 0);
 
-    // Amount 0 can always be made in 1 way:
-    // choose no coins
     dp[0] = 1;
 
     for (int i = 0; i < n; i++) {
