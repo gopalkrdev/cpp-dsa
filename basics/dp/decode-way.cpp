@@ -18,12 +18,10 @@ int numDecodings(string s) {
 
     for (int i = 2; i <= n; i++) {
 
-        // One digit
         if (s[i - 1] != '0') {
             dp[i] += dp[i - 1];
         }
 
-        // Two digits
         int number = (s[i - 2] - '0') * 10
                    + (s[i - 1] - '0');
 
