@@ -14,7 +14,6 @@ int lastStoneWeightII(int stones[], int n) {
 
     int target = totalSum / 2;
 
-    // dp[s] = kya sum s banana possible hai?
     vector<bool> dp(target + 1, false);
 
     dp[0] = true;
@@ -28,7 +27,6 @@ int lastStoneWeightII(int stones[], int n) {
         }
     }
 
-    // Sabse bada possible subset sum <= total/2
     int best = 0;
 
     for (int s = target; s >= 0; s--) {
@@ -39,7 +37,6 @@ int lastStoneWeightII(int stones[], int n) {
         }
     }
 
-    // Difference between two groups
     return totalSum - 2 * best;
 }
 
