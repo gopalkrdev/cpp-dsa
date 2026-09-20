@@ -13,10 +13,8 @@ bool isMatch(string s, string p) {
         vector<bool>(m + 1, false)
     );
 
-    // Empty string matches empty pattern
     dp[0][0] = true;
 
-    // Patterns like a*, a*b*, a*b*c*
     for (int j = 2; j <= m; j++) {
 
         if (p[j - 1] == '*') {
@@ -28,20 +26,16 @@ bool isMatch(string s, string p) {
 
         for (int j = 1; j <= m; j++) {
 
-            // Normal character or '.'
             if (p[j - 1] == '.' ||
                 p[j - 1] == s[i - 1]) {
 
                 dp[i][j] = dp[i - 1][j - 1];
             }
 
-            // '*'
             else if (p[j - 1] == '*') {
 
-                // Ignore previous character + '*'
                 dp[i][j] = dp[i][j - 2];
 
-                // Use '*' for current character
                 if (p[j - 2] == '.' ||
                     p[j - 2] == s[i - 1]) {
 
