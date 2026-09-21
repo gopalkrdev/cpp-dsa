@@ -5,8 +5,7 @@ using namespace std;
 
 int maximumSumIncreasingSubsequence(int arr[], int n) {
 
-    // dp[i] = maximum sum of an increasing
-    // subsequence ending at index i
+   
     vector<int> dp(n);
 
     for (int i = 0; i < n; i++) {
