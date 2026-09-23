@@ -8,7 +8,6 @@ int longestBitonicSubsequence(int arr[], int n) {
     vector<int> lis(n, 1);
     vector<int> lds(n, 1);
 
-    // LIS ending at i
     for (int i = 1; i < n; i++) {
 
         for (int j = 0; j < i; j++) {
@@ -23,7 +22,6 @@ int longestBitonicSubsequence(int arr[], int n) {
         }
     }
 
-    // LDS starting from i
     for (int i = n - 2; i >= 0; i--) {
 
         for (int j = i + 1; j < n; j++) {
@@ -42,7 +40,6 @@ int longestBitonicSubsequence(int arr[], int n) {
 
     for (int i = 0; i < n; i++) {
 
-        // i is the peak
         int bitonicLength =
             lis[i] + lds[i] - 1;
 
