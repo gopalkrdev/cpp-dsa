@@ -13,7 +13,6 @@ int minInsertions(string s) {
         vector<int>(n, 0)
     );
 
-    // length = current substring length
     for (int length = 2; length <= n; length++) {
 
         for (int i = 0; i <= n - length; i++) {
