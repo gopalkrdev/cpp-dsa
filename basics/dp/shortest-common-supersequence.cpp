@@ -9,13 +9,11 @@ string shortestCommonSupersequence(string s1, string s2) {
     int n = s1.length();
     int m = s2.length();
 
-    // dp[i][j] = LCS length
     vector<vector<int>> dp(
         n + 1,
         vector<int>(m + 1, 0)
     );
 
-    // Find LCS
     for (int i = 1; i <= n; i++) {
 
         for (int j = 1; j <= m; j++) {
@@ -34,7 +32,6 @@ string shortestCommonSupersequence(string s1, string s2) {
         }
     }
 
-    // Construct SCS
     string result;
 
     int i = n;
@@ -61,14 +58,12 @@ string shortestCommonSupersequence(string s1, string s2) {
         }
     }
 
-    // Remaining characters of s1
     while (i > 0) {
 
         result += s1[i - 1];
         i--;
     }
 
-    // Remaining characters of s2
     while (j > 0) {
 
         result += s2[j - 1];
