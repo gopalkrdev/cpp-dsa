@@ -15,9 +15,7 @@ struct TreeNode {
     }
 };
 
-// Returns:
-// first  -> maximum money if current node is NOT robbed
-// second -> maximum money if current node IS robbed
+
 pair<int, int> solve(TreeNode* root) {
 
     if (root == nullptr) {
@@ -27,14 +25,11 @@ pair<int, int> solve(TreeNode* root) {
     pair<int, int> left = solve(root->left);
     pair<int, int> right = solve(root->right);
 
-    // If current node is NOT robbed,
-    // children may or may not be robbed.
+  
     int notRobbed =
         max(left.first, left.second) +
         max(right.first, right.second);
 
-    // If current node IS robbed,
-    // children cannot be robbed.
     int robbed =
         root->val +
         left.first +
@@ -55,15 +50,6 @@ int rob(TreeNode* root) {
 
 int main() {
 
-    /*
-             3
-            / \
-           2   3
-            \   \
-             3   1
-
-        Maximum = 7
-    */
 
     TreeNode* root = new TreeNode(3);
 
