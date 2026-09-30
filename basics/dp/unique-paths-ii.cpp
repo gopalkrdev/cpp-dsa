@@ -7,7 +7,6 @@ int uniquePathsWithObstacles(vector<vector<int>>& grid) {
     int m = grid.size();
     int n = grid[0].size();
 
-    // Starting cell itself is blocked
     if (grid[0][0] == 1) {
         return 0;
     }
@@ -20,7 +19,6 @@ int uniquePathsWithObstacles(vector<vector<int>>& grid) {
 
         for (int j = 0; j < n; j++) {
 
-            // Obstacle
             if (grid[i][j] == 1) {
                 dp[j] = 0;
             }
