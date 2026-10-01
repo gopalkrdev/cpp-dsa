@@ -15,7 +15,6 @@ int calculateMinimumHP(vector<vector<int>>& dungeon) {
         vector<int>(n + 1, INF)
     );
 
-    // Extra cells to make the transition easy
     dp[m][n - 1] = 1;
     dp[m - 1][n] = 1;
 
