@@ -10,7 +10,6 @@ struct Activity {
 
 int maxActivities(vector<Activity>& activities) {
 
-    // Sort by finishing time
     sort(activities.begin(), activities.end(),
          [](Activity a, Activity b) {
              return a.end < b.end;
@@ -21,7 +20,6 @@ int maxActivities(vector<Activity>& activities) {
 
     for (Activity activity : activities) {
 
-        // Activity can be selected
         if (activity.start >= lastEnd) {
             count++;
             lastEnd = activity.end;
