@@ -4,7 +4,6 @@ using namespace std;
 
 int findContentChildren(int greed[], int n, int cookie[], int m) {
 
-    // Smallest greed and smallest suitable cookie first
     sort(greed, greed + n);
     sort(cookie, cookie + m);
 
@@ -13,7 +12,6 @@ int findContentChildren(int greed[], int n, int cookie[], int m) {
 
     while (child < n && currentCookie < m) {
 
-        // Cookie can satisfy the child
         if (cookie[currentCookie] >= greed[child]) {
             child++;
         }
