@@ -21,12 +21,10 @@ vector<int> findAnagrams(string s, string p) {
     for (int i = 0; i < s.length(); i++) {
         frequencyWindow[s[i] - 'a']++;
 
-        // Remove element outside the window
         if (i >= windowSize) {
             frequencyWindow[s[i - windowSize] - 'a']--;
         }
 
-        // Compare frequencies
         if (i >= windowSize - 1) {
             bool same = true;
 
