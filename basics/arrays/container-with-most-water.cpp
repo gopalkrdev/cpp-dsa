@@ -17,7 +17,6 @@ int maxArea(int height[], int n) {
 
         maxWater = max(maxWater, area);
 
-        // Move the smaller height
         if (height[left] < height[right]) {
             left++;
         } else {
