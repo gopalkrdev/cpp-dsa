@@ -5,13 +5,11 @@ int findDuplicate(int arr[], int n) {
     int slow = arr[0];
     int fast = arr[0];
 
-    // Find intersection point
     do {
         slow = arr[slow];
         fast = arr[arr[fast]];
     } while (slow != fast);
 
-    // Find entrance of cycle
     slow = arr[0];
 
     while (slow != fast) {
