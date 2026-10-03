@@ -11,7 +11,6 @@ vector<vector<string>> groupAnagrams(vector<string>& words) {
     for (string word : words) {
         string key = word;
 
-        // Same letters -> same sorted key
         sort(key.begin(), key.end());
 
         groups[key].push_back(word);
