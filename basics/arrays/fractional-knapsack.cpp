@@ -11,7 +11,6 @@ struct Item {
 
 double fractionalKnapsack(vector<Item>& items, int capacity) {
 
-    // Sort by value/weight ratio in descending order
     sort(items.begin(), items.end(),
          [](Item a, Item b) {
              return (double)a.value / a.weight >
@@ -26,13 +25,11 @@ double fractionalKnapsack(vector<Item>& items, int capacity) {
             break;
         }
 
-        // Take complete item
         if (item.weight <= capacity) {
             totalValue += item.value;
             capacity -= item.weight;
         }
 
-        // Take fraction of item
         else {
             double fraction =
                 (double)capacity / item.weight;
