@@ -11,7 +11,6 @@ struct Job {
 
 void jobSequencing(vector<Job>& jobs) {
 
-    // Sort jobs by profit in descending order
     sort(jobs.begin(), jobs.end(),
          [](Job a, Job b) {
              return a.profit > b.profit;
@@ -30,7 +29,6 @@ void jobSequencing(vector<Job>& jobs) {
 
     for (Job job : jobs) {
 
-        // Find latest available slot
         for (int j = job.deadline; j >= 1; j--) {
 
             if (slot[j] == '-') {
