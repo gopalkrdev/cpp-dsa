@@ -15,12 +15,10 @@ int minJumps(int arr[], int n) {
 
         farthest = max(farthest, i + arr[i]);
 
-        // Current jump ki range complete
         if (i == currentEnd) {
             jumps++;
             currentEnd = farthest;
 
-            // Last index reached
             if (currentEnd >= n - 1) {
                 break;
             }
