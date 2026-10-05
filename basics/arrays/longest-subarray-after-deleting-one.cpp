@@ -13,7 +13,6 @@ int longestSubarray(int arr[], int n) {
             zeros++;
         }
 
-        // We can have at most one zero
         while (zeros > 1) {
             if (arr[left] == 0) {
                 zeros--;
@@ -22,7 +21,6 @@ int longestSubarray(int arr[], int n) {
             left++;
         }
 
-        // Delete one element
         maxLength = max(maxLength, right - left);
     }
 
