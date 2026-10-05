@@ -22,13 +22,11 @@ bool lemonadeChange(int bills[], int n) {
 
         else if (bills[i] == 20) {
 
-            // Prefer one $10 + one $5
             if (ten > 0 && five > 0) {
                 ten--;
                 five--;
             }
 
-            // Otherwise use three $5
             else if (five >= 3) {
                 five -= 3;
             }
