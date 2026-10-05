@@ -19,7 +19,6 @@ int characterReplacement(string s, int k) {
 
         int windowLength = right - left + 1;
 
-        // Characters that need to be replaced
         int replacements = windowLength - maxFrequency;
 
         while (replacements > k) {
