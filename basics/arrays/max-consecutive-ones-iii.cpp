@@ -13,7 +13,6 @@ int longestOnes(int arr[], int n, int k) {
             zeros++;
         }
 
-        // More than k zeros -> shrink window
         while (zeros > k) {
             if (arr[left] == 0) {
                 zeros--;
