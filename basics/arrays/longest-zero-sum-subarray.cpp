@@ -12,17 +12,14 @@ int longestZeroSumSubarray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         prefixSum += arr[i];
 
-        // Prefix sum becomes zero
         if (prefixSum == 0) {
             maxLength = i + 1;
         }
 
-        // First occurrence is important
         if (firstIndex.find(prefixSum) == firstIndex.end()) {
             firstIndex[prefixSum] = i;
         }
 
-        // Same prefix sum means sum between them is zero
         else {
             int length = i - firstIndex[prefixSum];
             maxLength = max(maxLength, length);
