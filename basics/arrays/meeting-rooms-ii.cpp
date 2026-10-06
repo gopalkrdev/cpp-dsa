@@ -9,22 +9,18 @@ int minMeetingRooms(vector<vector<int>>& intervals) {
         return 0;
     }
 
-    // Sort meetings by start time
     sort(intervals.begin(), intervals.end());
 
-    // Min heap stores ending times
     priority_queue<int, vector<int>, greater<int>> minHeap;
 
     for (auto& interval : intervals) {
         int start = interval[0];
         int end = interval[1];
 
-        // A room is free
         if (!minHeap.empty() && minHeap.top() <= start) {
             minHeap.pop();
         }
 
-        // Need a room
         minHeap.push(end);
     }
 
