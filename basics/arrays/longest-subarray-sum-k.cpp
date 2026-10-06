@@ -12,17 +12,14 @@ int longestSubarray(int arr[], int n, int k) {
     for (int i = 0; i < n; i++) {
         prefixSum += arr[i];
 
-        // Subarray starts from index 0
         if (prefixSum == k) {
             maxLength = i + 1;
         }
 
-        // Store first occurrence only
         if (firstIndex.find(prefixSum) == firstIndex.end()) {
             firstIndex[prefixSum] = i;
         }
 
-        // Check whether prefixSum - k exists
         int required = prefixSum - k;
 
         if (firstIndex.find(required) != firstIndex.end()) {
