@@ -11,7 +11,6 @@ int maxProduct(int arr[], int n) {
     for (int i = 1; i < n; i++) {
         int value = arr[i];
 
-        // Negative number can turn minimum into maximum
         if (value < 0) {
             swap(currentMax, currentMin);
         }
