@@ -4,7 +4,6 @@ using namespace std;
 
 int findMinimumPlatforms(int arrival[], int departure[], int n) {
 
-    // Sort arrival and departure times
     sort(arrival, arrival + n);
     sort(departure, departure + n);
 
@@ -16,14 +15,12 @@ int findMinimumPlatforms(int arrival[], int departure[], int n) {
 
     while (i < n && j < n) {
 
-        // New train arrives before current train departs
         if (arrival[i] <= departure[j]) {
             platforms++;
             maxPlatforms = max(maxPlatforms, platforms);
             i++;
         }
         else {
-            // A train has departed
             platforms--;
             j++;
         }
