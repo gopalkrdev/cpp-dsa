@@ -5,12 +5,10 @@ int missingNumber(int arr[], int n) {
     int xorAll = 0;
     int xorArray = 0;
 
-    // XOR of numbers from 1 to n
     for (int i = 1; i <= n; i++) {
         xorAll ^= i;
     }
 
-    // XOR of array elements
     for (int i = 0; i < n - 1; i++) {
         xorArray ^= arr[i];
     }
