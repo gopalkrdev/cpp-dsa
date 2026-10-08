@@ -15,7 +15,6 @@ int subarraysDivByK(int arr[], int n, int k) {
 
         int remainder = prefixSum % k;
 
-        // Handle negative remainder
         if (remainder < 0) {
             remainder += k;
         }
