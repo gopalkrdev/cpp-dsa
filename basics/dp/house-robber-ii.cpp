@@ -29,10 +29,8 @@ int robCircle(int money[], int n) {
     if (n == 1)
         return money[0];
 
-    // Case 1: Exclude last house
     int case1 = robLinear(money, 0, n - 2);
 
-    // Case 2: Exclude first house
     int case2 = robLinear(money, 1, n - 1);
 
     return max(case1, case2);
