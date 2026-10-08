@@ -12,13 +12,10 @@ void reverseArray(int arr[], int left, int right) {
 void rotateArray(int arr[], int n, int k) {
     k = k % n;
 
-    // Reverse entire array
     reverseArray(arr, 0, n - 1);
 
-    // Reverse first k elements
     reverseArray(arr, 0, k - 1);
 
-    // Reverse remaining elements
     reverseArray(arr, k, n - 1);
 }
 
