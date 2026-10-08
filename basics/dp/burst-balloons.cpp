@@ -7,7 +7,6 @@ int maxCoins(vector<int>& nums) {
 
     int n = nums.size();
 
-    // Add boundary balloons
     vector<int> a(n + 2, 1);
 
     for (int i = 0; i < n; i++) {
@@ -19,7 +18,6 @@ int maxCoins(vector<int>& nums) {
         vector<int>(n + 2, 0)
     );
 
-    // length = interval length
     for (int length = 1; length <= n; length++) {
 
         for (int left = 1;
@@ -28,7 +26,6 @@ int maxCoins(vector<int>& nums) {
 
             int right = left + length - 1;
 
-            // Choose the last balloon to burst
             for (int k = left; k <= right; k++) {
 
                 int coins =
