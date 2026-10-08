@@ -7,12 +7,10 @@ using namespace std;
 vector<int> topKFrequent(int arr[], int n, int k) {
     unordered_map<int, int> frequency;
 
-    // Count frequency
     for (int i = 0; i < n; i++) {
         frequency[arr[i]]++;
     }
 
-    // Min Heap: {frequency, element}
     priority_queue<
         pair<int, int>,
         vector<pair<int, int>>,
