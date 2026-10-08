@@ -6,7 +6,6 @@ using namespace std;
 vector<int> partitionLabels(string s) {
     vector<int> last(26, 0);
 
-    // Store last occurrence of every character
     for (int i = 0; i < s.length(); i++) {
         last[s[i] - 'a'] = i;
     }
@@ -18,10 +17,8 @@ vector<int> partitionLabels(string s) {
 
     for (int i = 0; i < s.length(); i++) {
 
-        // Current character must stay in this partition
         end = max(end, last[s[i] - 'a']);
 
-        // Partition complete
         if (i == end) {
             result.push_back(end - start + 1);
             start = i + 1;
