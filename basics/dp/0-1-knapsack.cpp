@@ -9,7 +9,6 @@ int knapsack(int weights[], int values[], int n, int capacity) {
 
     for (int i = 0; i < n; i++) {
 
-        // Reverse loop is important for 0/1 Knapsack
         for (int w = capacity; w >= weights[i]; w--) {
 
             dp[w] = max(
