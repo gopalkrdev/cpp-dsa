@@ -19,12 +19,10 @@ string longestPalindrome(string s) {
     int start = 0;
     int maxLength = 1;
 
-    // Every single character is a palindrome
     for (int i = 0; i < n; i++) {
         dp[i][i] = true;
     }
 
-    // Check substrings of length 2 and more
     for (int length = 2; length <= n; length++) {
 
         for (int i = 0; i <= n - length; i++) {
