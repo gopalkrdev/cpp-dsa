@@ -7,16 +7,12 @@ int minDeletions(string s) {
 
     int n = s.length();
 
-    // dp[i] = minimum deletions needed
-    // for substring s[0...i]
     int dp[n];
 
     for (int i = 0; i < n; i++) {
         dp[i] = 0;
     }
 
-    // left stores dp[i-1][j-1]
-    // right stores dp[i][j-1]
     for (int i = n - 2; i >= 0; i--) {
 
         int prev = 0;
