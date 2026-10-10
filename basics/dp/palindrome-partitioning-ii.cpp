@@ -8,13 +8,11 @@ int minCut(string s) {
 
     int n = s.length();
 
-    // palindrome[i][j] = true if s[i...j] is palindrome
     vector<vector<bool>> palindrome(
         n,
         vector<bool>(n, false)
     );
 
-    // Find all palindromic substrings
     for (int i = n - 1; i >= 0; i--) {
 
         for (int j = i; j < n; j++) {
@@ -27,7 +25,6 @@ int minCut(string s) {
         }
     }
 
-    // dp[i] = minimum cuts needed for s[0...i]
     vector<int> dp(n, 0);
 
     for (int i = 0; i < n; i++) {
