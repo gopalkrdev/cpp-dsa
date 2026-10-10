@@ -23,8 +23,6 @@ int minCuts(string s) {
 
     int n = s.length();
 
-    // dp[i] = minimum cuts needed
-    // for substring s[0...i]
     vector<int> dp(n, 0);
 
     for (int i = 0; i < n; i++) {
