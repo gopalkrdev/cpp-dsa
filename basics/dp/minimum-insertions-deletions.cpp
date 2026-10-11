@@ -12,7 +12,6 @@ int main() {
     int n = s1.length();
     int m = s2.length();
 
-    // Find LCS
     vector<vector<int>> dp(
         n + 1,
         vector<int>(m + 1, 0)
