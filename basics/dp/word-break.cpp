@@ -15,7 +15,6 @@ bool wordBreak(string s, vector<string>& wordDict) {
 
     vector<bool> dp(n + 1, false);
 
-    // Empty string can always be formed
     dp[0] = true;
 
     for (int i = 1; i <= n; i++) {
