@@ -11,7 +11,6 @@ void solve(
     vector<string> &answer,
     string current
 ) {
-    // Entire string processed
     if (start == s.length()) {
         answer.push_back(current);
         return;
