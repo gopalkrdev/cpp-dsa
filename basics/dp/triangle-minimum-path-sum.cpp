@@ -9,7 +9,6 @@ int minimumTotal(vector<vector<int>>& triangle) {
 
     vector<int> dp = triangle[n - 1];
 
-    // Start from second-last row
     for (int i = n - 2; i >= 0; i--) {
 
         for (int j = 0; j <= i; j++) {
