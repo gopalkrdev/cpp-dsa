@@ -11,9 +11,6 @@ int maxProfit(vector<int>& prices) {
         return 0;
     }
 
-    // hold  = stock currently held
-    // sold  = stock sold today
-    // rest  = no stock and not selling today
 
     vector<int> hold(n);
     vector<int> sold(n);
@@ -25,16 +22,13 @@ int maxProfit(vector<int>& prices) {
 
     for (int i = 1; i < n; i++) {
 
-        // Continue holding OR buy today
         hold[i] = max(
             hold[i - 1],
             rest[i - 1] - prices[i]
         );
 
-        // Sell today
         sold[i] = hold[i - 1] + prices[i];
 
-        // Stay at rest OR previous day was sold
         rest[i] = max(
             rest[i - 1],
             sold[i - 1]
