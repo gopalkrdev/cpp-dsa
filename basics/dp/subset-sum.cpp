@@ -6,12 +6,10 @@ bool subsetSum(int arr[], int n, int target) {
 
     vector<bool> dp(target + 1, false);
 
-    // Sum 0 is always possible: choose nothing
     dp[0] = true;
 
     for (int i = 0; i < n; i++) {
 
-        // Reverse traversal is important
         for (int sum = target; sum >= arr[i]; sum--) {
 
             if (dp[sum - arr[i]]) {
