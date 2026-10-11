@@ -10,14 +10,10 @@ int findTargetSumWays(int arr[], int n, int target) {
         total += arr[i];
     }
 
-    // Target possible nahi hai
     if (abs(target) > total) {
         return 0;
     }
 
-    // S1 - S2 = target
-    // S1 + S2 = total
-    // S1 = (total + target) / 2
 
     if ((total + target) % 2 != 0) {
         return 0;
