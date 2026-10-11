@@ -42,7 +42,6 @@ string alienOrder(vector<string>& words) {
             }
         }
 
-        // Invalid case:
         if (!found && a.size() > b.size()) {
             return "";
         }
@@ -76,7 +75,6 @@ string alienOrder(vector<string>& words) {
         }
     }
 
-    // Cycle exists
     if (order.size() !=
         count(present.begin(), present.end(), true)) {
 
