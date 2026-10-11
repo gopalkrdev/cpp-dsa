@@ -10,7 +10,6 @@ bool canPartition(int arr[], int n) {
         totalSum += arr[i];
     }
 
-    // Odd total cannot be divided equally
     if (totalSum % 2 != 0) {
         return false;
     }
@@ -23,8 +22,6 @@ bool canPartition(int arr[], int n) {
 
     for (int i = 0; i < n; i++) {
 
-        // Reverse loop so each element
-        // is used only once
         for (int sum = target; sum >= arr[i]; sum--) {
 
             dp[sum] = dp[sum] ||
