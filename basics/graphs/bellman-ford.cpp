@@ -18,7 +18,6 @@ vector<int> bellmanFord(
 
     distance[source] = 0;
 
-    // Relax all edges V-1 times
     for (int i = 1; i <= n - 1; i++) {
 
         bool changed = false;
@@ -39,13 +38,11 @@ vector<int> bellmanFord(
             }
         }
 
-        // No update means answer is already stable
         if (!changed) {
             break;
         }
     }
 
-    // Check for negative cycle
     for (Edge edge : edges) {
 
         if (distance[edge.u] == INT_MAX) {
