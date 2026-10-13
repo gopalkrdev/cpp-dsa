@@ -21,19 +21,16 @@ void dfs(
 
     for (int neighbour : graph[node]) {
 
-        // Ignore parent edge
         if (neighbour == parent) {
             continue;
         }
 
-        // Back edge
         if (visited[neighbour]) {
 
             low[node] =
                 min(low[node], tin[neighbour]);
         }
 
-        // Tree edge
         else {
 
             dfs(
@@ -49,7 +46,6 @@ void dfs(
             low[node] =
                 min(low[node], low[neighbour]);
 
-            // Non-root condition
             if (parent != -1 &&
                 low[neighbour] >= tin[node]) {
 
@@ -60,7 +56,6 @@ void dfs(
         }
     }
 
-    // Root condition
     if (parent == -1 && children > 1) {
         isArticulation[node] = true;
     }
@@ -72,13 +67,7 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    //       0
-    //       |
-    //       1
-    //      / \
-    //     2---3
-    //         |
-    //         4
+   
 
     graph[0].push_back(1);
     graph[1].push_back(0);
