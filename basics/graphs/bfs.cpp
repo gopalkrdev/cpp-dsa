@@ -11,7 +11,6 @@ void bfs(int start, vector<vector<int>>& graph) {
 
     queue<int> q;
 
-    // Start node
     visited[start] = true;
     q.push(start);
 
@@ -22,7 +21,6 @@ void bfs(int start, vector<vector<int>>& graph) {
 
         cout << node << " ";
 
-        // Visit neighbours
         for (int neighbour : graph[node]) {
 
             if (!visited[neighbour]) {
@@ -40,7 +38,6 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // Edges
     graph[0].push_back(1);
     graph[0].push_back(2);
 
