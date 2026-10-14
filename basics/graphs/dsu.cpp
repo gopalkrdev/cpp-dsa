@@ -26,7 +26,6 @@ public:
             return x;
         }
 
-        // Path compression
         return parent[x] = find(parent[x]);
     }
 
@@ -35,12 +34,10 @@ public:
         int rootA = find(a);
         int rootB = find(b);
 
-        // Already same group
         if (rootA == rootB) {
             return;
         }
 
-        // Union by rank
         if (rank[rootA] < rank[rootB]) {
 
             parent[rootA] = rootB;
