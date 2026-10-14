@@ -5,12 +5,10 @@ using namespace std;
 void dfs(int node, vector<vector<int>>& graph,
          vector<bool>& visited) {
 
-    // Mark current node visited
     visited[node] = true;
 
     cout << node << " ";
 
-    // Visit all neighbours
     for (int neighbour : graph[node]) {
 
         if (!visited[neighbour]) {
@@ -25,7 +23,6 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // Edges
     graph[0].push_back(1);
     graph[0].push_back(2);
 
