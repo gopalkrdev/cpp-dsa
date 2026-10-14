@@ -10,10 +10,8 @@ vector<int> dijkstra(
 ) {
     int n = graph.size();
 
-    // Initially all distances are infinity
     vector<int> distance(n, INT_MAX);
 
-    // {distance, node}
     priority_queue<
         pair<int, int>,
         vector<pair<int, int>>,
@@ -31,7 +29,6 @@ vector<int> dijkstra(
 
         pq.pop();
 
-        // Ignore outdated entry
         if (currentDistance != distance[node]) {
             continue;
         }
@@ -44,7 +41,6 @@ vector<int> dijkstra(
             int newDistance =
                 currentDistance + weight;
 
-            // Better path found
             if (newDistance < distance[neighbour]) {
 
                 distance[neighbour] = newDistance;
@@ -66,7 +62,6 @@ int main() {
 
     vector<vector<pair<int, int>>> graph(n);
 
-    // {neighbour, weight}
 
     graph[0].push_back({1, 4});
     graph[1].push_back({0, 4});
