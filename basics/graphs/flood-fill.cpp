@@ -12,30 +12,23 @@ void dfs(
     int m = image.size();
     int n = image[0].size();
 
-    // Boundary check
     if (row < 0 || row >= m ||
         col < 0 || col >= n) {
         return;
     }
 
-    // Different color
     if (image[row][col] != oldColor) {
         return;
     }
 
-    // Change color
     image[row][col] = newColor;
 
-    // Up
     dfs(row - 1, col, oldColor, newColor, image);
 
-    // Down
     dfs(row + 1, col, oldColor, newColor, image);
 
-    // Left
     dfs(row, col - 1, oldColor, newColor, image);
 
-    // Right
     dfs(row, col + 1, oldColor, newColor, image);
 }
 
@@ -47,7 +40,6 @@ vector<vector<int>> floodFill(
 ) {
     int oldColor = image[sr][sc];
 
-    // Important: same color
     if (oldColor == newColor) {
         return image;
     }
