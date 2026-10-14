@@ -11,8 +11,6 @@ bool dfs(int node,
 
     for (int neighbour : graph[node]) {
 
-        // If neighbour is not visited,
-        // continue DFS
         if (!visited[neighbour]) {
 
             if (dfs(neighbour, node, graph, visited)) {
@@ -20,8 +18,7 @@ bool dfs(int node,
             }
         }
 
-        // Neighbour is already visited
-        // and it is not the parent
+       
         else if (neighbour != parent) {
             return true;
         }
@@ -55,12 +52,7 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // Cycle:
-    // 0 -- 1
-    // |    |
-    // 2 -- 3
-    //
-    // 3 -- 4
+ 
 
     graph[0].push_back(1);
     graph[1].push_back(0);
