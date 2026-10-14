@@ -8,11 +8,7 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // 0 -- 1
-    // |    |
-    // 2    3
-    //      |
-    //      4
+   
 
     graph[0].push_back(1);
     graph[0].push_back(2);
@@ -27,7 +23,6 @@ int main() {
 
     graph[4].push_back(3);
 
-    // Print adjacency list
     for (int i = 0; i < n; i++) {
 
         cout << i << " -> ";
