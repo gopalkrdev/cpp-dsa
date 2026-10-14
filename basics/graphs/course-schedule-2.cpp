@@ -10,7 +10,6 @@ vector<int> findOrder(
     vector<vector<int>> graph(numCourses);
     vector<int> indegree(numCourses, 0);
 
-    // Build graph
     for (auto prerequisite : prerequisites) {
 
         int course = prerequisite[0];
@@ -22,7 +21,6 @@ vector<int> findOrder(
 
     queue<int> q;
 
-    // Courses with no prerequisite
     for (int i = 0; i < numCourses; i++) {
 
         if (indegree[i] == 0) {
