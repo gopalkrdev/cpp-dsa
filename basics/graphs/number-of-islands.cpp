@@ -10,30 +10,23 @@ void dfs(
     int m = grid.size();
     int n = grid[0].size();
 
-    // Boundary check
     if (row < 0 || row >= m ||
         col < 0 || col >= n) {
         return;
     }
 
-    // Water or already visited
     if (grid[row][col] == 0) {
         return;
     }
 
-    // Mark as visited
     grid[row][col] = 0;
 
-    // Up
     dfs(row - 1, col, grid);
 
-    // Down
     dfs(row + 1, col, grid);
 
-    // Left
     dfs(row, col - 1, grid);
 
-    // Right
     dfs(row, col + 1, grid);
 }
 
