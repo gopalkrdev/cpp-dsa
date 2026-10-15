@@ -10,14 +10,12 @@ int primMST(vector<vector<pair<int, int>>>& graph) {
 
     vector<bool> inMST(n, false);
 
-    // {weight, node}
     priority_queue<
         pair<int, int>,
         vector<pair<int, int>>,
         greater<pair<int, int>>
     > pq;
 
-    // Start from node 0
     pq.push({0, 0});
 
     int totalWeight = 0;
@@ -29,17 +27,14 @@ int primMST(vector<vector<pair<int, int>>>& graph) {
 
         pq.pop();
 
-        // Already included
         if (inMST[node]) {
             continue;
         }
 
-        // Include node in MST
         inMST[node] = true;
 
         totalWeight += weight;
 
-        // Add neighbouring edges
         for (auto edge : graph[node]) {
 
             int neighbour = edge.first;
@@ -64,7 +59,6 @@ int main() {
 
     vector<vector<pair<int, int>>> graph(n);
 
-    // {neighbour, weight}
 
     graph[0].push_back({1, 2});
     graph[1].push_back({0, 2});
