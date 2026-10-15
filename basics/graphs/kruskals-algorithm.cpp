@@ -33,7 +33,6 @@ public:
             return x;
         }
 
-        // Path compression
         return parent[x] = find(parent[x]);
     }
 
@@ -42,12 +41,10 @@ public:
         int rootA = find(a);
         int rootB = find(b);
 
-        // Same component = cycle
         if (rootA == rootB) {
             return false;
         }
 
-        // Union by rank
         if (rank[rootA] < rank[rootB]) {
             parent[rootA] = rootB;
         }
@@ -66,7 +63,6 @@ public:
 
 int kruskalMST(int n, vector<Edge>& edges) {
 
-    // Sort edges by weight
     sort(edges.begin(), edges.end(),
          [](Edge a, Edge b) {
              return a.weight < b.weight;
@@ -79,7 +75,6 @@ int kruskalMST(int n, vector<Edge>& edges) {
 
     for (Edge edge : edges) {
 
-        // Add edge only if it doesn't form cycle
         if (dsu.unite(edge.u, edge.v)) {
 
             totalWeight += edge.weight;
@@ -89,7 +84,6 @@ int kruskalMST(int n, vector<Edge>& edges) {
                  << edge.v << " = "
                  << edge.weight << endl;
 
-            // MST needs exactly n-1 edges
             if (edgesUsed == n - 1) {
                 break;
             }
