@@ -17,8 +17,7 @@ void dfs(int node,
         }
     }
 
-    // Node ko tab push karo
-    // jab uske saare neighbours process ho jayein
+
     st.push(node);
 }
 
