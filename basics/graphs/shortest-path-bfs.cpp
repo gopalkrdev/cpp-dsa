@@ -23,7 +23,6 @@ vector<int> shortestPath(
 
         for (int neighbour : graph[node]) {
 
-            // First time we reach a node
             if (distance[neighbour] == -1) {
 
                 distance[neighbour] =
@@ -43,9 +42,7 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // 0 -- 1
-    // |    |
-    // 3 -- 2 -- 4
+ 
 
     graph[0].push_back(1);
     graph[1].push_back(0);
