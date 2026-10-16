@@ -43,7 +43,6 @@ int main() {
     vector<vector<int>> graph(n);
     vector<vector<int>> reversedGraph(n);
 
-    // Directed graph
     graph[0].push_back(1);
     graph[1].push_back(2);
     graph[2].push_back(0);
@@ -52,7 +51,6 @@ int main() {
     graph[3].push_back(4);
     graph[4].push_back(3);
 
-    // Create reversed graph
     for (int u = 0; u < n; u++) {
 
         for (int v : graph[u]) {
@@ -60,7 +58,6 @@ int main() {
         }
     }
 
-    // Step 1: DFS and store finish order
     vector<bool> visited(n, false);
     stack<int> st;
 
@@ -71,10 +68,8 @@ int main() {
         }
     }
 
-    // Step 2: Reset visited
     fill(visited.begin(), visited.end(), false);
 
-    // Step 3: DFS on reversed graph
     cout << "Strongly Connected Components:\n";
 
     while (!st.empty()) {
