@@ -9,7 +9,6 @@ int candy(vector<int>& ratings) {
 
     vector<int> candies(n, 1);
 
-    // Left to Right
     for (int i = 1; i < n; i++) {
 
         if (ratings[i] > ratings[i - 1]) {
@@ -19,7 +18,6 @@ int candy(vector<int>& ratings) {
         }
     }
 
-    // Right to Left
     for (int i = n - 2; i >= 0; i--) {
 
         if (ratings[i] > ratings[i + 1]) {
