@@ -10,7 +10,6 @@ struct Activity {
 
 int activitySelection(vector<Activity>& activities) {
 
-    // Sort by finishing time
     sort(activities.begin(), activities.end(),
          [](Activity a, Activity b) {
              return a.finish < b.finish;
@@ -28,7 +27,6 @@ int activitySelection(vector<Activity>& activities) {
 
     for (int i = 1; i < activities.size(); i++) {
 
-        // Activity can be selected
         if (activities[i].start >= lastFinish) {
 
             count++;
