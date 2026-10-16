@@ -12,7 +12,6 @@ double fractionalKnapsack(
     int capacity,
     vector<Item>& items
 ) {
-    // Sort by value/weight ratio
     sort(items.begin(), items.end(),
          [](Item a, Item b) {
 
@@ -33,14 +32,12 @@ double fractionalKnapsack(
             break;
         }
 
-        // Complete item
         if (item.weight <= capacity) {
 
             capacity -= item.weight;
             totalValue += item.value;
         }
 
-        // Fraction of item
         else {
 
             double fraction =
