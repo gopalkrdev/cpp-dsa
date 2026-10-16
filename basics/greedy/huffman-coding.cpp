@@ -37,7 +37,6 @@ void generateCodes(
         return;
     }
 
-    // Leaf node
     if (root->left == nullptr &&
         root->right == nullptr) {
 
@@ -49,13 +48,11 @@ void generateCodes(
         return;
     }
 
-    // Left = 0
     generateCodes(
         root->left,
         code + "0"
     );
 
-    // Right = 1
     generateCodes(
         root->right,
         code + "1"
@@ -80,7 +77,6 @@ int main() {
         Compare
     > minHeap;
 
-    // Create leaf nodes
     for (int i = 0;
          i < characters.size();
          i++) {
@@ -93,7 +89,6 @@ int main() {
         );
     }
 
-    // Build Huffman Tree
     while (minHeap.size() > 1) {
 
         Node* left = minHeap.top();
