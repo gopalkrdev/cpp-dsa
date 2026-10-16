@@ -19,7 +19,6 @@ int canCompleteCircuit(
 
         tank += gas[i] - cost[i];
 
-        // Current start cannot work
         if (tank < 0) {
 
             start = i + 1;
@@ -27,7 +26,6 @@ int canCompleteCircuit(
         }
     }
 
-    // Impossible to complete circuit
     if (totalGas < totalCost) {
         return -1;
     }
