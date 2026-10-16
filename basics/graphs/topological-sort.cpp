@@ -10,7 +10,6 @@ vector<int> topologicalSort(
 
     vector<int> indegree(n, 0);
 
-    // Calculate indegree
     for (int i = 0; i < n; i++) {
 
         for (int neighbour : graph[i]) {
@@ -20,7 +19,6 @@ vector<int> topologicalSort(
 
     queue<int> q;
 
-    // Nodes with indegree 0
     for (int i = 0; i < n; i++) {
 
         if (indegree[i] == 0) {
@@ -37,7 +35,6 @@ vector<int> topologicalSort(
 
         result.push_back(node);
 
-        // Remove outgoing edges
         for (int neighbour : graph[node]) {
 
             indegree[neighbour]--;
@@ -48,8 +45,6 @@ vector<int> topologicalSort(
         }
     }
 
-    // If all nodes are not processed,
-    // graph contains a cycle.
     if (result.size() != n) {
         return {};
     }
@@ -63,7 +58,6 @@ int main() {
 
     vector<vector<int>> graph(n);
 
-    // Directed edges
     graph[5].push_back(2);
     graph[5].push_back(0);
 
