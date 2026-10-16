@@ -13,8 +13,7 @@ int orangesRotting(vector<vector<int>>& grid) {
     int fresh = 0;
     int minutes = 0;
 
-    // Put all rotten oranges into queue
-    // and count fresh oranges
+  
     for (int i = 0; i < m; i++) {
 
         for (int j = 0; j < n; j++) {
@@ -32,12 +31,10 @@ int orangesRotting(vector<vector<int>>& grid) {
     int dr[] = {-1, 1, 0, 0};
     int dc[] = {0, 0, -1, 1};
 
-    // Multi-source BFS
     while (!q.empty() && fresh > 0) {
 
         int size = q.size();
 
-        // One complete level = one minute
         for (int i = 0; i < size; i++) {
 
             int row = q.front().first;
@@ -50,13 +47,11 @@ int orangesRotting(vector<vector<int>>& grid) {
                 int newRow = row + dr[d];
                 int newCol = col + dc[d];
 
-                // Check boundary
                 if (newRow < 0 || newRow >= m ||
                     newCol < 0 || newCol >= n) {
                     continue;
                 }
 
-                // Fresh orange found
                 if (grid[newRow][newCol] == 1) {
 
                     grid[newRow][newCol] = 2;
@@ -74,7 +69,6 @@ int orangesRotting(vector<vector<int>>& grid) {
         minutes++;
     }
 
-    // Fresh oranges still remain
     if (fresh > 0) {
         return -1;
     }
