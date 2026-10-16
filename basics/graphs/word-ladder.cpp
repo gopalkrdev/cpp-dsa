@@ -14,7 +14,6 @@ int wordLadder(
         wordList.end()
     );
 
-    // End word dictionary me nahi hai
     if (words.find(endWord) == words.end()) {
         return 0;
     }
@@ -30,7 +29,6 @@ int wordLadder(
 
         q.pop();
 
-        // Destination reached
         if (word == endWord) {
             return steps;
         }
@@ -39,7 +37,6 @@ int wordLadder(
 
             char original = word[i];
 
-            // Try a-z
             for (char ch = 'a'; ch <= 'z'; ch++) {
 
                 word[i] = ch;
@@ -51,7 +48,6 @@ int wordLadder(
                         steps + 1
                     });
 
-                    // Mark visited
                     words.erase(word);
                 }
             }
