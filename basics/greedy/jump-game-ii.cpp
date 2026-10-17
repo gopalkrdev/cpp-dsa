@@ -12,13 +12,11 @@ int jump(vector<int>& nums) {
 
     for (int i = 0; i < nums.size() - 1; i++) {
 
-        // Farthest position reachable
         farthest = max(
             farthest,
             i + nums[i]
         );
 
-        // Current jump range finished
         if (i == currentEnd) {
 
             jumps++;
