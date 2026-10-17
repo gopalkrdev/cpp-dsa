@@ -9,14 +9,12 @@ vector<int> intersection(
 ) {
     unordered_set<int> st;
 
-    // Store nums1
     for (int x : nums1) {
         st.insert(x);
     }
 
     unordered_set<int> resultSet;
 
-    // Check nums2
     for (int x : nums2) {
 
         if (st.count(x)) {
@@ -24,7 +22,6 @@ vector<int> intersection(
         }
     }
 
-    // Convert set to vector
     vector<int> result;
 
     for (int x : resultSet) {
