@@ -18,10 +18,8 @@ vector<vector<string>> groupAnagrams(
 
         string key = word;
 
-        // Sort characters
         sort(key.begin(), key.end());
 
-        // Same key = same anagram group
         groups[key].push_back(word);
     }
 
