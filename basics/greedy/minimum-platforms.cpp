@@ -20,7 +20,6 @@ int minimumPlatforms(
 
     while (i < n && j < n) {
 
-        // New train arrives
         if (arrival[i] <= departure[j]) {
 
             platforms++;
@@ -31,7 +30,6 @@ int minimumPlatforms(
             i++;
         }
 
-        // Train departs
         else {
 
             platforms--;
