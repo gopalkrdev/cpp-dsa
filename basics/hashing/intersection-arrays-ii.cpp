@@ -9,14 +9,12 @@ vector<int> intersection(
 ) {
     unordered_map<int, int> freq;
 
-    // Count frequency of nums1
     for (int x : nums1) {
         freq[x]++;
     }
 
     vector<int> result;
 
-    // Check nums2
     for (int x : nums2) {
 
         if (freq[x] > 0) {
