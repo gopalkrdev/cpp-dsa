@@ -11,7 +11,6 @@ bool containsNearbyDuplicate(
 
     for (int i = 0; i < nums.size(); i++) {
 
-        // Number already seen?
         if (lastIndex.find(nums[i])
             != lastIndex.end()) {
 
@@ -23,7 +22,6 @@ bool containsNearbyDuplicate(
             }
         }
 
-        // Store latest index
         lastIndex[nums[i]] = i;
     }
 
