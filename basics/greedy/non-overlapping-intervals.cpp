@@ -10,7 +10,6 @@ int eraseOverlapIntervals(
         return 0;
     }
 
-    // Sort by ending time
     sort(
         intervals.begin(),
         intervals.end(),
@@ -25,13 +24,11 @@ int eraseOverlapIntervals(
 
     for (int i = 1; i < intervals.size(); i++) {
 
-        // Overlap
         if (intervals[i][0] < lastEnd) {
 
             removed++;
         }
 
-        // No overlap
         else {
 
             lastEnd = intervals[i][1];
