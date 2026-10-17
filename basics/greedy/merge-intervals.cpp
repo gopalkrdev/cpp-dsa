@@ -10,7 +10,6 @@ vector<vector<int>> mergeIntervals(
         return {};
     }
 
-    // Sort by start time
     sort(
         intervals.begin(),
         intervals.end()
@@ -18,7 +17,6 @@ vector<vector<int>> mergeIntervals(
 
     vector<vector<int>> result;
 
-    // First interval
     result.push_back(intervals[0]);
 
     for (int i = 1; i < intervals.size(); i++) {
@@ -29,7 +27,6 @@ vector<vector<int>> mergeIntervals(
         int lastEnd =
             result.back()[1];
 
-        // Overlapping
         if (currentStart <= lastEnd) {
 
             result.back()[1] =
@@ -39,7 +36,6 @@ vector<vector<int>> mergeIntervals(
                 );
         }
 
-        // Non-overlapping
         else {
 
             result.push_back(
