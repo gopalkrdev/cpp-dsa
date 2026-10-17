@@ -24,7 +24,6 @@ bool isHappy(int n) {
 
     while (n != 1) {
 
-        // Cycle detected
         if (seen.count(n)) {
             return false;
         }
