@@ -19,13 +19,11 @@ int main() {
         {'E', 3, 15}
     };
 
-    // Sort jobs by decreasing profit
     sort(jobs.begin(), jobs.end(),
          [](Job a, Job b) {
              return a.profit > b.profit;
          });
 
-    // Maximum deadline
     int maxDeadline = 0;
 
     for (Job job : jobs) {
@@ -33,16 +31,13 @@ int main() {
             max(maxDeadline, job.deadline);
     }
 
-    // Time slots
     vector<char> slot(maxDeadline + 1, '-');
 
     int totalProfit = 0;
     int jobsDone = 0;
 
-    // Try every job
     for (Job job : jobs) {
 
-        // Find latest free slot
         for (int t = job.deadline; t >= 1; t--) {
 
             if (slot[t] == '-') {
