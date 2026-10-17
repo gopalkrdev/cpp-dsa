@@ -9,16 +9,13 @@ bool canJump(vector<int>& nums) {
 
     for (int i = 0; i < nums.size(); i++) {
 
-        // Current index unreachable
         if (i > maxReach) {
             return false;
         }
 
-        // Update maximum reachable index
         maxReach =
             max(maxReach, i + nums[i]);
 
-        // Already reached the end
         if (maxReach >= nums.size() - 1) {
             return true;
         }
