@@ -17,21 +17,17 @@ int lengthOfLongestSubstring(string s) {
 
         char ch = s[right];
 
-        // Character already exists
         if (lastIndex.find(ch)
             != lastIndex.end()) {
 
-            // Move left only forward
             left = max(
                 left,
                 lastIndex[ch] + 1
             );
         }
 
-        // Store latest index
         lastIndex[ch] = right;
 
-        // Current window length
         int length = right - left + 1;
 
         maxLength = max(
