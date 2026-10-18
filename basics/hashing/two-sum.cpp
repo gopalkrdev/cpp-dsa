@@ -13,7 +13,6 @@ vector<int> twoSum(
 
         int complement = target - nums[i];
 
-        // Check if complement already exists
         if (mp.find(complement) != mp.end()) {
 
             return {
@@ -22,7 +21,6 @@ vector<int> twoSum(
             };
         }
 
-        // Store value -> index
         mp[nums[i]] = i;
     }
 
