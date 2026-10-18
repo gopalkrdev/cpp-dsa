@@ -7,7 +7,6 @@ int longestConsecutive(vector<int>& nums) {
 
     unordered_set<int> st;
 
-    // Put all elements into set
     for (int x : nums) {
         st.insert(x);
     }
@@ -16,13 +15,11 @@ int longestConsecutive(vector<int>& nums) {
 
     for (int x : st) {
 
-        // x is the starting point
         if (st.find(x - 1) == st.end()) {
 
             int current = x;
             int length = 1;
 
-            // Find consecutive numbers
             while (st.find(current + 1)
                    != st.end()) {
 
