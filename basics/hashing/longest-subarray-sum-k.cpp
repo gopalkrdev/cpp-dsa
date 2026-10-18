@@ -16,12 +16,10 @@ int longestSubarraySumK(
 
         sum += nums[i];
 
-        // Subarray starts from index 0
         if (sum == k) {
             maxLength = i + 1;
         }
 
-        // Check previous prefix sum
         int required = sum - k;
 
         if (firstIndex.find(required)
@@ -34,7 +32,6 @@ int longestSubarraySumK(
                 max(maxLength, length);
         }
 
-        // Store only first occurrence
         if (firstIndex.find(sum)
             == firstIndex.end()) {
 
