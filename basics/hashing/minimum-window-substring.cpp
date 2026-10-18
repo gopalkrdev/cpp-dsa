@@ -13,15 +13,13 @@ string minWindow(string s, string t) {
     vector<int> need(128, 0);
     vector<int> window(128, 0);
 
-    // Frequency required from t
     for (char ch : t) {
         need[ch]++;
     }
 
     int left = 0;
 
-    // Number of required characters
-    // that are currently satisfied
+   
     int formed = 0;
 
     int required = t.length();
@@ -37,28 +35,24 @@ string minWindow(string s, string t) {
 
         window[ch]++;
 
-        // This character contributes
-        // to the required frequency
+
         if (need[ch] > 0 &&
             window[ch] <= need[ch]) {
 
             formed++;
         }
 
-        // Current window is valid
         while (formed == required) {
 
             int windowLength =
                 right - left + 1;
 
-            // Store minimum window
             if (windowLength < minLength) {
 
                 minLength = windowLength;
                 start = left;
             }
 
-            // Remove left character
             char leftChar = s[left];
 
             window[leftChar]--;
