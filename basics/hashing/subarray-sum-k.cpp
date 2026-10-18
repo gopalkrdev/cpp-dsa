@@ -9,7 +9,6 @@ int subarraySum(
 ) {
     unordered_map<int, int> prefixCount;
 
-    // Empty prefix
     prefixCount[0] = 1;
 
     int sum = 0;
