@@ -29,13 +29,11 @@ void heapSort(vector<int>& arr) {
 
     int n = arr.size();
 
-    // Step 1: Build Max Heap
     for (int i = n / 2 - 1; i >= 0; i--) {
 
         heapify(arr, n, i);
     }
 
-    // Step 2: Extract maximum
     for (int i = n - 1; i > 0; i--) {
 
         swap(arr[0], arr[i]);
