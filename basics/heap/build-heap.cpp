@@ -29,7 +29,6 @@ void buildMaxHeap(vector<int>& arr) {
 
     int n = arr.size();
 
-    // Last non-leaf node
     for (int i = n / 2 - 1; i >= 0; i--) {
 
         heapify(arr, n, i);
