@@ -7,13 +7,11 @@ int firstNonRepeating(vector<int>& nums) {
 
     unordered_map<int, int> freq;
 
-    // Step 1: Count frequency
     for (int x : nums) {
         freq[x]++;
     }
 
-    // Step 2: Find first element
-    // whose frequency is 1
+    
     for (int x : nums) {
 
         if (freq[x] == 1) {
