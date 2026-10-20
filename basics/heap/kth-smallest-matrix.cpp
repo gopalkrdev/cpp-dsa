@@ -27,7 +27,6 @@ int kthSmallest(
         Compare
     > minHeap;
 
-    // First element of every row
     for (int row = 0; row < n; row++) {
 
         minHeap.push({
@@ -48,7 +47,6 @@ int kthSmallest(
 
         int nextCol = current.col + 1;
 
-        // Add next element from same row
         if (nextCol < n) {
 
             minHeap.push({
