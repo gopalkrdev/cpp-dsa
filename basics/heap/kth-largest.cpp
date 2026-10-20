@@ -17,7 +17,6 @@ int findKthLargest(
 
         minHeap.push(num);
 
-        // Keep only k largest elements
         if (minHeap.size() > k) {
             minHeap.pop();
         }
