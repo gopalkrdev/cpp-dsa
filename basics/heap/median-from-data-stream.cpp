@@ -6,12 +6,8 @@ class MedianFinder {
 
 private:
 
-    // Smaller half
-    // Maximum element at top
     priority_queue<int> small;
 
-    // Larger half
-    // Minimum element at top
     priority_queue<
         int,
         vector<int>,
@@ -22,11 +18,8 @@ public:
 
     void addNum(int num) {
 
-        // Step 1: Add to small
         small.push(num);
 
-        // Step 2: Make sure every element
-        // in small <= every element in large
         if (!large.empty() &&
             small.top() > large.top()) {
 
@@ -37,7 +30,6 @@ public:
             large.push(value);
         }
 
-        // Step 3: Balance sizes
         if (small.size() >
             large.size() + 1) {
 
