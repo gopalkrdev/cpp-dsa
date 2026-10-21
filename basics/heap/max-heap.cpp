@@ -8,7 +8,6 @@ private:
 
     vector<int> heap;
 
-    // Move element upward
     void heapifyUp(int index) {
 
         while (index > 0) {
@@ -25,7 +24,6 @@ private:
         }
     }
 
-    // Move element downward
     void heapifyDown(int index) {
 
         int n = heap.size();
@@ -61,7 +59,6 @@ private:
 
 public:
 
-    // Insert element
     void push(int value) {
 
         heap.push_back(value);
@@ -69,7 +66,6 @@ public:
         heapifyUp(heap.size() - 1);
     }
 
-    // Get maximum element
     int top() {
 
         if (heap.empty()) {
@@ -80,7 +76,6 @@ public:
         return heap[0];
     }
 
-    // Remove maximum element
     void pop() {
 
         if (heap.empty()) {
