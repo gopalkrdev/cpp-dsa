@@ -6,7 +6,6 @@ using namespace std;
 
 int main() {
 
-    // Max Heap
     priority_queue<int> maxHeap;
 
     maxHeap.push(5);
@@ -26,7 +25,6 @@ int main() {
     cout << endl;
 
 
-    // Min Heap
     priority_queue<
         int,
         vector<int>,
