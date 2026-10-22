@@ -24,7 +24,6 @@ vector<int> mergeKSortedArrays(
         Compare
     > minHeap;
 
-    // First element of every array
     for (int i = 0; i < arrays.size(); i++) {
 
         if (!arrays[i].empty()) {
@@ -49,7 +48,6 @@ vector<int> mergeKSortedArrays(
         int nextIndex =
             current.elementIndex + 1;
 
-        // Add next element from same array
         if (nextIndex <
             arrays[current.arrayIndex].size()) {
 
