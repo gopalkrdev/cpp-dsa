@@ -8,15 +8,12 @@ vector<int> topKFrequent(
     vector<int>& nums,
     int k
 ) {
-    // Frequency map
     unordered_map<int, int> freq;
 
     for (int num : nums) {
         freq[num]++;
     }
 
-    // Min Heap:
-    // {frequency, number}
     priority_queue<
         pair<int, int>,
         vector<pair<int, int>>,
@@ -33,7 +30,6 @@ vector<int> topKFrequent(
             number
         });
 
-        // Keep only k elements
         if (minHeap.size() > k) {
             minHeap.pop();
         }
