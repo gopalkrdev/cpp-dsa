@@ -13,7 +13,6 @@ int countPairs(int arr[], int n, int target) {
         int sum = arr[left] + arr[right];
 
         if (sum == target) {
-            // Handle duplicate values
             if (arr[left] == arr[right]) {
                 int elements = right - left + 1;
                 count += elements * (elements - 1) / 2;
