@@ -13,7 +13,6 @@ string customSort(string order, string s) {
 
     string result = "";
 
-    // Characters according to order
     for (char ch : order) {
         while (frequency[ch - 'a'] > 0) {
             result += ch;
@@ -21,7 +20,6 @@ string customSort(string order, string s) {
         }
     }
 
-    // Remaining characters
     for (int i = 0; i < 26; i++) {
         while (frequency[i] > 0) {
             result += char('a' + i);
