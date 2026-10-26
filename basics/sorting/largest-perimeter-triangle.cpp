@@ -6,8 +6,6 @@ int largestPerimeter(int arr[], int n) {
     sort(arr, arr + n);
 
     for (int i = n - 1; i >= 2; i--) {
-        // Triangle condition:
-        // a + b > c
         if (arr[i - 2] + arr[i - 1] > arr[i]) {
             return arr[i - 2] + arr[i - 1] + arr[i];
         }
