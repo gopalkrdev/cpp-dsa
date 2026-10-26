@@ -16,12 +16,10 @@ vector<vector<int>> findIntersection(
         int start = max(first[i][0], second[j][0]);
         int end = min(first[i][1], second[j][1]);
 
-        // If intervals overlap
         if (start <= end) {
             result.push_back({start, end});
         }
 
-        // Move the interval that ends first
         if (first[i][1] < second[j][1]) {
             i++;
         } else {
