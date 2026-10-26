@@ -16,8 +16,6 @@ long long mergeAndCount(int arr[], int temp[], int left, int mid, int right) {
             temp[k] = arr[j];
             j++;
 
-            // All remaining elements in left half
-            // form inversions with arr[j].
             inversions += (mid - i + 1);
         }
 
