@@ -9,7 +9,6 @@ vector<int> majorityElement(int arr[], int n) {
     int count1 = 0;
     int count2 = 0;
 
-    // Find two possible candidates
     for (int i = 0; i < n; i++) {
 
         if (arr[i] == candidate1) {
@@ -32,7 +31,6 @@ vector<int> majorityElement(int arr[], int n) {
         }
     }
 
-    // Verify candidates
     count1 = 0;
     count2 = 0;
 
