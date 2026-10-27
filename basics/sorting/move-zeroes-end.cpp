@@ -4,7 +4,6 @@ using namespace std;
 void moveZeroes(int arr[], int n) {
     int index = 0;
 
-    // Move all non-zero elements to the front
     for (int i = 0; i < n; i++) {
         if (arr[i] != 0) {
             arr[index] = arr[i];
@@ -12,7 +11,6 @@ void moveZeroes(int arr[], int n) {
         }
     }
 
-    // Fill remaining positions with zero
     while (index < n) {
         arr[index] = 0;
         index++;
