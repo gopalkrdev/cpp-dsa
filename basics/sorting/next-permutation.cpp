@@ -10,14 +10,12 @@ void reverseArray(int arr[], int left, int right) {
 }
 
 void nextPermutation(int arr[], int n) {
-    // Step 1: Find the first decreasing element
     int i = n - 2;
 
     while (i >= 0 && arr[i] >= arr[i + 1]) {
         i--;
     }
 
-    // Step 2: Find element just greater than arr[i]
     if (i >= 0) {
         int j = n - 1;
 
@@ -28,7 +26,6 @@ void nextPermutation(int arr[], int n) {
         swap(arr[i], arr[j]);
     }
 
-    // Step 3: Reverse the remaining part
     reverseArray(arr, i + 1, n - 1);
 }
 
