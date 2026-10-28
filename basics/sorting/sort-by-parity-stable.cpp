@@ -5,7 +5,6 @@ void stableParitySort(int arr[], int n) {
     int result[100];
     int index = 0;
 
-    // First put even elements
     for (int i = 0; i < n; i++) {
         if (arr[i] % 2 == 0) {
             result[index] = arr[i];
@@ -13,7 +12,6 @@ void stableParitySort(int arr[], int n) {
         }
     }
 
-    // Then put odd elements
     for (int i = 0; i < n; i++) {
         if (arr[i] % 2 != 0) {
             result[index] = arr[i];
@@ -21,7 +19,6 @@ void stableParitySort(int arr[], int n) {
         }
     }
 
-    // Copy result back
     for (int i = 0; i < n; i++) {
         arr[i] = result[i];
     }
