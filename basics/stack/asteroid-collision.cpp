@@ -11,38 +11,31 @@ vector<int> asteroidCollision(vector<int>& asteroids) {
 
         bool destroyed = false;
 
-        // Collision possible only when
-        // stack top is moving right
-        // and current asteroid is moving left
+        
         while (!st.empty() &&
                st.top() > 0 &&
                asteroid < 0) {
 
             int top = st.top();
 
-            // Current asteroid is smaller
             if (top < -asteroid) {
                 st.pop();
                 continue;
             }
 
-            // Both have same size
             if (top == -asteroid) {
                 st.pop();
             }
 
-            // Current asteroid is destroyed
             destroyed = true;
             break;
         }
 
-        // If current asteroid survived
         if (!destroyed) {
             st.push(asteroid);
         }
     }
 
-    // Convert stack to vector
     vector<int> result(st.size());
 
     for (int i = st.size() - 1; i >= 0; i--) {
