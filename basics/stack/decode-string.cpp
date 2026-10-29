@@ -13,14 +13,12 @@ string decodeString(string s) {
 
     for (char ch : s) {
 
-        // If character is a digit
         if (isdigit(ch)) {
 
             number = number * 10
                     + (ch - '0');
         }
 
-        // Opening bracket
         else if (ch == '[') {
 
             countStack.push(number);
@@ -30,7 +28,6 @@ string decodeString(string s) {
             current = "";
         }
 
-        // Closing bracket
         else if (ch == ']') {
 
             int repeat = countStack.top();
@@ -49,7 +46,6 @@ string decodeString(string s) {
             current = previous + temp;
         }
 
-        // Normal character
         else {
 
             current += ch;
