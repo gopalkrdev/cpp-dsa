@@ -13,7 +13,6 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
 
     for (int i = 0; i < n; i++) {
 
-        // Current temperature is warmer
         while (!st.empty() &&
                temperatures[i] >
                temperatures[st.top()]) {
@@ -25,7 +24,6 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
                 i - previousDay;
         }
 
-        // Store current index
         st.push(i);
     }
 
