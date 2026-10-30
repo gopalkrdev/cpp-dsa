@@ -11,14 +11,12 @@ private:
 
 public:
 
-    // Push element
     void push(int x) {
 
         int size = q.size();
 
         q.push(x);
 
-        // Move previous elements behind x
         for (int i = 0; i < size; i++) {
 
             q.push(q.front());
@@ -26,7 +24,6 @@ public:
         }
     }
 
-    // Remove top
     int pop() {
 
         if (q.empty()) {
@@ -39,7 +36,6 @@ public:
         return value;
     }
 
-    // Return top
     int top() {
 
         if (q.empty()) {
@@ -49,7 +45,6 @@ public:
         return q.front();
     }
 
-    // Check empty
     bool empty() {
 
         return q.empty();
