@@ -21,13 +21,11 @@ private:
 
 public:
 
-    // Add element
     void push(int x) {
 
         inputStack.push(x);
     }
 
-    // Remove front element
     int pop() {
 
         if (outputStack.empty()) {
@@ -45,7 +43,6 @@ public:
         return value;
     }
 
-    // Return front element
     int front() {
 
         if (outputStack.empty()) {
@@ -59,7 +56,6 @@ public:
         return outputStack.top();
     }
 
-    // Check empty
     bool empty() {
 
         return inputStack.empty()
