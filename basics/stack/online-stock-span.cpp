@@ -6,7 +6,6 @@ class StockSpanner {
 
 private:
 
-    // pair = {price, span}
     stack<pair<int, int>> st;
 
 public:
@@ -15,8 +14,7 @@ public:
 
         int span = 1;
 
-        // Remove all previous prices
-        // smaller than or equal to current price
+       
         while (!st.empty() &&
                st.top().first <= price) {
 
@@ -25,7 +23,6 @@ public:
             st.pop();
         }
 
-        // Store current price and span
         st.push({price, span});
 
         return span;
