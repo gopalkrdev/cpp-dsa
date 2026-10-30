@@ -11,7 +11,6 @@ string removeInvalidParentheses(string s) {
 
     unordered_set<int> invalid;
 
-    // Find invalid parentheses
     for (int i = 0; i < s.length(); i++) {
 
         if (s[i] == '(') {
@@ -24,20 +23,17 @@ string removeInvalidParentheses(string s) {
                 st.pop();
             }
             else {
-                // No matching '('
                 invalid.insert(i);
             }
         }
     }
 
-    // Remaining '(' are invalid
     while (!st.empty()) {
 
         invalid.insert(st.top());
         st.pop();
     }
 
-    // Build result
     string result = "";
 
     for (int i = 0; i < s.length(); i++) {
