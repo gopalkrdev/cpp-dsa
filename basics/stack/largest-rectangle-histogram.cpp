@@ -15,7 +15,6 @@ int largestRectangleArea(vector<int>& heights) {
 
     for (int i = 0; i <= n; i++) {
 
-        // Sentinel height 0 at the end
         int currentHeight =
             (i == n) ? 0 : heights[i];
 
