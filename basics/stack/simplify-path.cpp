@@ -12,15 +12,12 @@ string simplifyPath(string path) {
     stringstream ss(path);
     string part;
 
-    // Split path using '/'
     while (getline(ss, part, '/')) {
 
-        // Ignore empty part and "."
         if (part.empty() || part == ".") {
             continue;
         }
 
-        // Go one directory back
         if (part == "..") {
 
             if (!st.empty()) {
@@ -28,20 +25,17 @@ string simplifyPath(string path) {
             }
         }
 
-        // Normal directory
         else {
             st.push(part);
         }
     }
 
-    // If stack is empty
     if (st.empty()) {
         return "/";
     }
 
     string result = "";
 
-    // Stack ko reverse order me access karna hoga
     stack<string> temp;
 
     while (!st.empty()) {
