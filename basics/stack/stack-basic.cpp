@@ -6,7 +6,6 @@ int main() {
 
     stack<int> st;
 
-    // Push elements
     st.push(10);
     st.push(20);
     st.push(30);
@@ -19,14 +18,12 @@ int main() {
          << st.size()
          << endl;
 
-    // Remove top
     st.pop();
 
     cout << "After pop, top: "
          << st.top()
          << endl;
 
-    // Check empty
     if (st.empty()) {
         cout << "Stack is empty"
              << endl;
@@ -36,7 +33,6 @@ int main() {
              << endl;
     }
 
-    // Remove remaining elements
     st.pop();
     st.pop();
 
