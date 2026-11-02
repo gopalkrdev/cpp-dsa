@@ -44,7 +44,6 @@ bool search(Node* root, int key) {
     return search(root->right, key);
 }
 
-// Inorder Traversal
 void inorder(Node* root) {
     if (root == nullptr) return;
 
