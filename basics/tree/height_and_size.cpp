@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Node structure
 struct Node {
     int data;
     Node* left;
@@ -14,7 +13,6 @@ struct Node {
     }
 };
 
-// Calculate total number of nodes
 int countNodes(Node* root) {
     if (root == nullptr) {
         return 0;
@@ -24,7 +22,6 @@ int countNodes(Node* root) {
              + countNodes(root->right);
 }
 
-// Calculate height of Binary Tree
 int height(Node* root) {
     if (root == nullptr) {
         return 0;
@@ -36,13 +33,11 @@ int height(Node* root) {
     return 1 + max(leftHeight, rightHeight);
 }
 
-// Count leaf nodes
 int countLeafNodes(Node* root) {
     if (root == nullptr) {
         return 0;
     }
 
-    // Leaf node has no children
     if (root->left == nullptr &&
         root->right == nullptr) {
         return 1;
@@ -52,7 +47,6 @@ int countLeafNodes(Node* root) {
          + countLeafNodes(root->right);
 }
 
-// Inorder Traversal
 void inorder(Node* root) {
     if (root == nullptr) {
         return;
@@ -64,7 +58,6 @@ void inorder(Node* root) {
 }
 
 int main() {
-    // Creating Binary Tree
     Node* root = new Node(1);
 
     root->left = new Node(2);
