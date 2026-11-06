@@ -2,7 +2,6 @@
 #include <queue>
 using namespace std;
 
-// Node structure
 struct Node {
     int data;
     Node* left;
@@ -15,7 +14,6 @@ struct Node {
     }
 };
 
-// Level Order Traversal
 void levelOrderTraversal(Node* root) {
     if (root == nullptr) {
         return;
@@ -23,23 +21,19 @@ void levelOrderTraversal(Node* root) {
 
     queue<Node*> q;
 
-    // Insert root into queue
     q.push(root);
 
     while (!q.empty()) {
 
-        // Get the front node
         Node* current = q.front();
         q.pop();
 
         cout << current->data << " ";
 
-        // Insert left child
         if (current->left != nullptr) {
             q.push(current->left);
         }
 
-        // Insert right child
         if (current->right != nullptr) {
             q.push(current->right);
         }
@@ -47,7 +41,6 @@ void levelOrderTraversal(Node* root) {
 }
 
 int main() {
-    // Creating Binary Tree
     Node* root = new Node(1);
 
     root->left = new Node(2);
