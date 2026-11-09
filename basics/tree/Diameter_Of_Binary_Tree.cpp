@@ -2,7 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-// Node Structure
 struct Node {
     int data;
     Node* left;
@@ -15,7 +14,6 @@ struct Node {
     }
 };
 
-// Calculate Height and Diameter
 int findDiameter(Node* root, int &diameter) {
 
     if (root == nullptr) {
@@ -25,16 +23,13 @@ int findDiameter(Node* root, int &diameter) {
     int leftHeight = findDiameter(root->left, diameter);
     int rightHeight = findDiameter(root->right, diameter);
 
-    // Calculate diameter
     diameter = max(diameter, leftHeight + rightHeight);
 
-    // Return height
     return 1 + max(leftHeight, rightHeight);
 }
 
 int main() {
 
-    // Creating Binary Tree
     Node* root = new Node(1);
 
     root->left = new Node(2);
