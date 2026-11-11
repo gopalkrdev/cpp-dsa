@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Node Structure
 struct Node {
     int data;
     Node* left;
@@ -14,24 +13,19 @@ struct Node {
     }
 };
 
-// Find Lowest Common Ancestor
 Node* findLCA(Node* root, int n1, int n2) {
 
-    // Base condition
     if (root == nullptr) {
         return nullptr;
     }
 
-    // If current node matches either value
     if (root->data == n1 || root->data == n2) {
         return root;
     }
 
-    // Search in left and right subtrees
     Node* leftLCA = findLCA(root->left, n1, n2);
     Node* rightLCA = findLCA(root->right, n1, n2);
 
-    // Both nodes found in different subtrees
     if (leftLCA != nullptr && rightLCA != nullptr) {
         return root;
     }
