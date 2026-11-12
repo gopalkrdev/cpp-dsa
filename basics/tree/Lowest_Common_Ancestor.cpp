@@ -30,7 +30,6 @@ Node* findLCA(Node* root, int n1, int n2) {
         return root;
     }
 
-    // Return the non-null result
     if (leftLCA != nullptr) {
         return leftLCA;
     }
@@ -40,7 +39,6 @@ Node* findLCA(Node* root, int n1, int n2) {
 
 int main() {
 
-    // Creating Binary Tree
     Node* root = new Node(1);
 
     root->left = new Node(2);
