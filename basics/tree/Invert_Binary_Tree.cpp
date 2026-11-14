@@ -2,7 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-// Node Structure
 struct Node {
     int data;
     Node* left;
@@ -15,18 +14,14 @@ struct Node {
     }
 };
 
-// Invert Binary Tree
 Node* invertTree(Node* root) {
 
-    // Base condition
     if (root == nullptr) {
         return nullptr;
     }
 
-    // Swap left and right subtrees
     swap(root->left, root->right);
 
-    // Recursively invert left subtree
     invertTree(root->left);
 
     // Recursively invert right subtree
