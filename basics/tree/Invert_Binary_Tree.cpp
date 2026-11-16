@@ -24,13 +24,13 @@ Node* invertTree(Node* root) {
 
     invertTree(root->left);
 
-    // Recursively invert right subtree
+  
     invertTree(root->right);
 
     return root;
 }
 
-// Inorder Traversal
+
 void inorder(Node* root) {
 
     if (root == nullptr) {
@@ -44,7 +44,7 @@ void inorder(Node* root) {
 
 int main() {
 
-    // Creating Binary Tree
+   
     Node* root = new Node(1);
 
     root->left = new Node(2);
@@ -59,7 +59,7 @@ int main() {
     cout << "Original Tree Inorder: ";
     inorder(root);
 
-    // Invert the Binary Tree
+    
     invertTree(root);
 
     cout << "\nMirror Tree Inorder: ";
