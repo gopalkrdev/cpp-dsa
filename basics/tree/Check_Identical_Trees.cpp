@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Node Structure
 struct Node {
     int data;
     Node* left;
@@ -14,15 +13,12 @@ struct Node {
     }
 };
 
-// Check Identical Binary Trees
 bool isIdentical(Node* root1, Node* root2) {
 
-    // Both trees are empty
     if (root1 == nullptr && root2 == nullptr) {
         return true;
     }
 
-    // One tree is empty
     if (root1 == nullptr || root2 == nullptr) {
         return false;
     }
