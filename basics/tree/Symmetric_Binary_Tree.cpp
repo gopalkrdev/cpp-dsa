@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Node Structure
 struct Node {
     int data;
     Node* left;
@@ -14,15 +13,12 @@ struct Node {
     }
 };
 
-// Check whether two subtrees are Mirror Images
 bool isMirror(Node* leftNode, Node* rightNode) {
 
-    // Both nodes are NULL
     if (leftNode == nullptr && rightNode == nullptr) {
         return true;
     }
 
-    // One node is NULL
     if (leftNode == nullptr || rightNode == nullptr) {
         return false;
     }
