@@ -23,13 +23,11 @@ bool isMirror(Node* leftNode, Node* rightNode) {
         return false;
     }
 
-    // Compare values and opposite subtrees
     return (leftNode->data == rightNode->data) &&
            isMirror(leftNode->left, rightNode->right) &&
            isMirror(leftNode->right, rightNode->left);
 }
 
-// Check Symmetric Binary Tree
 bool isSymmetric(Node* root) {
 
     if (root == nullptr) {
@@ -41,7 +39,6 @@ bool isSymmetric(Node* root) {
 
 int main() {
 
-    // Creating Symmetric Binary Tree
     Node* root = new Node(1);
 
     root->left = new Node(2);
@@ -53,7 +50,6 @@ int main() {
     root->right->left = new Node(4);
     root->right->right = new Node(3);
 
-    // Check Symmetry
     if (isSymmetric(root)) {
         cout << "Binary Tree is Symmetric";
     }
