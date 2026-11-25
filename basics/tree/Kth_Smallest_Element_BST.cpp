@@ -44,7 +44,6 @@ void kthSmallest(Node* root, int k, int& count, int& result) {
         return;
     }
 
-    // Visit Right Subtree
     kthSmallest(root->right, k, count, result);
 }
 
@@ -52,7 +51,6 @@ int main() {
 
     Node* root = nullptr;
 
-    // Creating BST
     root = insert(root, 50);
     insert(root, 30);
     insert(root, 70);
