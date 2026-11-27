@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Node Structure
 struct Node {
     int data;
     Node* left;
@@ -14,7 +13,6 @@ struct Node {
     }
 };
 
-// Insert Node into BST
 Node* insert(Node* root, int value) {
 
     if (root == nullptr) {
@@ -31,14 +29,12 @@ Node* insert(Node* root, int value) {
     return root;
 }
 
-// Find Kth Largest Element
 void kthLargest(Node* root, int k, int& count, int& result) {
 
     if (root == nullptr || count >= k) {
         return;
     }
 
-    // Visit Right Subtree First
     kthLargest(root->right, k, count, result);
 
     // Visit Current Node
