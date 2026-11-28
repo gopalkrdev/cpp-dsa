@@ -37,7 +37,6 @@ void kthLargest(Node* root, int k, int& count, int& result) {
 
     kthLargest(root->right, k, count, result);
 
-    // Visit Current Node
     count++;
 
     if (count == k) {
@@ -45,7 +44,6 @@ void kthLargest(Node* root, int k, int& count, int& result) {
         return;
     }
 
-    // Visit Left Subtree
     kthLargest(root->left, k, count, result);
 }
 
@@ -53,7 +51,6 @@ int main() {
 
     Node* root = nullptr;
 
-    // Creating BST
     root = insert(root, 50);
     insert(root, 30);
     insert(root, 70);
